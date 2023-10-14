@@ -37,8 +37,7 @@ stations_metadata <-
 source("functions/data_transformations.r")
 
 stations_metadata_df <- 
-  stations_metadata %>% 
-  transform_metadata_to_df(.)
+  transform_metadata_to_df()
 
 
 #### 3: Testing metadata
@@ -49,6 +48,15 @@ test_stations_metadata(stations_metadata_df)
 ### 5: Final volume query: 
 
 source("gql-queries/vol_qry.r")
+
+GQL(
+  vol_qry(
+    id=stations_metadata_df$id[1], 
+    from=to_iso8601(stations_metadata_df$latestData[1],-4),
+    to=to_iso8601(stations_metadata_df$latestData[1],0)
+  ),
+  .url = configs$vegvesen_url
+)
 
 stations_metadata_df %>% 
   filter(latestData > Sys.Date() - days(7)) %>% 
@@ -63,6 +71,7 @@ stations_metadata_df %>%
   ggplot(aes(x=from, y=volume)) + 
   geom_line() + 
   theme_classic()
+
 
 
 
