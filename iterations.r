@@ -72,6 +72,11 @@ stations_metadata_df %>%
   geom_line() + 
   theme_classic()
 
+#Task 6 - Add titles
+labs(title = paste("Station: ", stations_metadata_df$id), x = "Date", y = "Volume")
+
+
+# I am not quite sure why, but I get an error code every time I run the code, and I dont know how to fix it
 
 
 

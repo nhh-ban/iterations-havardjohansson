@@ -41,27 +41,26 @@ to_iso8601 <- function(datetime, offset_in_days) {
   return(iso8601_datetime)
 }
 
-# Problem 5
+# Problem 4b
 
 library(jsonlite)
 
-transform_volumes <- function(api_data) {
-  # If your API response is in JSON format, parse it to a list or data frame.
-  #api_data <- fromJSON(api_data)  
-  
-  # Extract relevant data from the API response and transform it into a data frame.
-  # For example, assuming the response contains a list of volume records:
-  volume_data <- lapply(api_data$volumeData, function(entry) {
-    data.frame(
-      Date = entry$from,
-      Volume = entry$total$volumeNumbers$volume
-    )
-  })
-  
-  # Combine the list of data frames into one data frame.
-  volume_df <- do.call(rbind, volume_data)
+#Problem 4B transform json to dataframe function
 
-  return(volume_df)
+transform_volumes <- function(json) {
+  
+  #Transform the list into a tibble
+  json[[1]][[1]][[1]]  %>%
+    as_tibble() %>%
+    
+    #Unnest all the columns
+    unnest_wider(edges) %>%
+    unnest_wider(node) %>%
+    unnest_wider(total) %>%
+    unnest_wider(volumeNumbers) %>%
+    
+    #Create "from" and "to" columns using datetime and add the "volume" column as numeric
+    mutate(from = ymd_hms(from), to = ymd_hms(to), volume = as.numeric(volume))
+  
 }
-
 
