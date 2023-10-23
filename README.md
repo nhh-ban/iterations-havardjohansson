@@ -1,11 +1,12 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/mJpP5ERB)
 # :wave: Welcome to the iteration assignment in BAN400!
 This is the iteration assignment in BAN400. As you know -- given that you have come this far -- the assignments in BAN400 will be organized through Github and Github Classroom. By accepting this assignment, the repository will be copied to your Github user so that you can clone it to your own personal machine and work on it. Then, you simply commit your changes and push back to Github when you are done. You can commit and push as much as you want before the deadline.
 
-**Date:**
+**Date: 13.10.2023**
 
-**Name:**
+**Name: H??vard Roms??y Johansson**
 
-**Student number:**
+**Student number: s231863**
 
 ## :information_source: Problem 1
 Update the personal information above.
@@ -35,7 +36,7 @@ Note that `latestData` should be converted to *UTC* format.
  1 97411V72313   Myrsund                       2022-05-08 00:00:00  63.4 10.2 
  2 20036V605081  PILESTREDET                   2009-11-22 00:00:00  59.9 10.7 
  3 01492V971789  GRENSEN ENDE                  2015-11-12 00:00:00  59.0 11.5 
- 4 54013V2352341 ØRGENVIKAKRYSSET RAMPE NORDG. 2022-05-08 00:00:00  60.3  9.68
+ 4 54013V2352341 CRGENVIKAKRYSSET RAMPE NORDG. 2022-05-08 00:00:00  60.3  9.68
  5 15322V971307  STOREBAUG                     2022-05-08 00:00:00  59.4 10.7 
 ```
 
